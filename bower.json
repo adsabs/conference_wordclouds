@@ -1,0 +1,11 @@
+{
+  "name": "wordcloud",
+  "version": "0.1.0",
+  "dependencies": {
+    "underscore": "",
+    "jquery": "~2.0.3",
+    "d3": "~3.4.6",
+    "d3-cloud": "~1.0.5"
+  }
+ 
+}
