@@ -216,7 +216,7 @@ _.templateSettings = {
           numWords = _.size(dict);
 
           meanTF = _.reduce(_.map(_.values(dict), function (x) {
-              return x['total_occurrences']
+              return x['record_count']
             }), function (m, n) {
               return m + n
             }, 0) / numWords;
@@ -238,7 +238,7 @@ _.templateSettings = {
 
           wordDict = _.map(dict, function (val, key) {
 
-            freq = val['total_occurrences'] / meanTF;
+            freq = val['record_count'] / meanTF;
             idf = val['idf'] / meanIDF
 
             modifiedVal = sliderRange[currentSliderVal][0] * idf + sliderRange[currentSliderVal][1] * freq;
