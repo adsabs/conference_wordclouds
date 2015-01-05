@@ -105,7 +105,7 @@ _.templateSettings = {
 
               var word = e.target.textContent;
 
-              window.location.href = that.model.get("link") + encodeURIComponent(" AND " + word);
+              window.location.href = that.model.get("link") + "+AND+" + word;
 
               }
 
@@ -292,13 +292,13 @@ _.templateSettings = {
 
 (function(){
 
-  var n = 0
+  var n = 0;
 
   _.each(config.cloud_info, function(data){
 
     setTimeout(function(){
 
-    data.link = config.meta.adsSearchLink + "q=bibcode:" + data.bibcode;
+    data.link = config.meta.adsSearchLink + "q=" + encodeURIComponent("bibcode:") + data.bibcode;
 
     var widget = new WordCloudWidget(data)
 
